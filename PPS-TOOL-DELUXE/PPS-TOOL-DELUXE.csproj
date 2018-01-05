@@ -54,7 +54,88 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Dashboard\DashboardController.cs" />
+    <Compile Include="Step1\Step1Controller.cs" />
+    <Compile Include="Step2\Step2Controller.cs" />
+    <Compile Include="Step3\Step3Controller.cs" />
+    <Compile Include="Step4\Step4Controller.cs" />
+    <Compile Include="Step5\Step5Controller.cs" />
+    <Compile Include="Step6\Step6Controller.cs" />
+    <Compile Include="Utility\Arbeitsplatz hinzufügen.xaml.cs">
+      <DependentUpon>Arbeitsplatz hinzufügen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Arbeitsplatz_bearbeiten.xaml.cs">
+      <DependentUpon>Arbeitsplatz_bearbeiten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Erzeugnis bearbeiten.xaml.cs">
+      <DependentUpon>Erzeugnis bearbeiten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Erzeugnisverwaltung.xaml.cs">
+      <DependentUpon>Erzeugnisverwaltung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Kaufteil bearbeiten.xaml.cs">
+      <DependentUpon>Kaufteil bearbeiten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Kaufteilverwaltung.xaml.cs">
+      <DependentUpon>Kaufteilverwaltung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Step2\Schritt2.xaml.cs">
+      <DependentUpon>Schritt2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Step3\Schritt3.xaml.cs">
+      <DependentUpon>Schritt3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Step4\Schritt4.xaml.cs">
+      <DependentUpon>Schritt4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Step5\Schritt5.xaml.cs">
+      <DependentUpon>Schritt5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Step6\Schritt6.xaml.cs">
+      <DependentUpon>Schritt6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Speichern.xaml.cs">
+      <DependentUpon>Speichern.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Arbeitsplatzverwalung.xaml.cs">
+      <DependentUpon>Arbeitsplatzverwalung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Subkomponente hinzufügen.xaml.cs">
+      <DependentUpon>Subkomponente hinzufügen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UtilityController.cs" />
+    <Page Include="Utility\Arbeitsplatz hinzufügen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Arbeitsplatz_bearbeiten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dashboard\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Erzeugnis bearbeiten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Erzeugnisverwaltung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Kaufteil bearbeiten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Kaufteilverwaltung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Step1\Schritt1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -62,10 +143,42 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Step1\Schritt1.xaml.cs">
+      <DependentUpon>Schritt1.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Step2\Schritt2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Step3\Schritt3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Step4\Schritt4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Step5\Schritt5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Step6\Schritt6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Speichern.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Arbeitsplatzverwalung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utility\Subkomponente hinzufügen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,6 +205,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\buttonGermany.png" />
+    <Resource Include="Ressource\buttonUk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\iconTool.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

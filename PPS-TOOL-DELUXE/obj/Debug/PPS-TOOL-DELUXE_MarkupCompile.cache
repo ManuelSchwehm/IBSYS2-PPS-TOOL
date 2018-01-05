@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\
 PPS_TOOL_DELUXE
 none
 false
 DEBUG;TRACE
-C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\App.xaml
-11151548125
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\App.xaml
+16-1835924163
 
-5-2017746502
+28966347564
 131569487696
-MainWindow.xaml;
+Utility\Arbeitsplatz hinzufügen.xaml;Utility\Arbeitsplatz_bearbeiten.xaml;Dashboard\Dashboard.xaml;Utility\Erzeugnis bearbeiten.xaml;Utility\Erzeugnisverwaltung.xaml;Utility\Kaufteil bearbeiten.xaml;Utility\Kaufteilverwaltung.xaml;Step1\Schritt1.xaml;Step2\Schritt2.xaml;Step3\Schritt3.xaml;Step4\Schritt4.xaml;Step5\Schritt5.xaml;Step6\Schritt6.xaml;Utility\Speichern.xaml;Utility\Arbeitsplatzverwalung.xaml;Utility\Subkomponente hinzufügen.xaml;
 
-True
+False
 

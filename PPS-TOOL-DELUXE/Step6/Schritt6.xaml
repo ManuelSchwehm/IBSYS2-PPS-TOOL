@@ -1,0 +1,17 @@
+﻿<Window x:Name="Schritt6" x:Class="PPS_TOOL_DELUXE.Step6.Step6"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PPS_TOOL_DELUXE"
+        mc:Ignorable="d"
+        Title="Schritt 6" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="Schritt6_abbrechen" Content="Abbrechen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="20,29,0,0" FontSize="10" BorderBrush="#FFD4CCCC"/>
+        <Button x:Name="Schritt6_weiter" Content="Weiter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="415,31,0,0"
+                FontSize="10" BorderBrush="#FFD1D1D1"/>
+        <Label Content="Export" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="225,40,0,0" FontStyle="Italic"/>
+        <Label Content="Ibsys2 Tool" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.158,0.577" Margin="205,10,0,0" FontSize="14" FontWeight="Bold"/>
+        <Button x:Name="speichern" Content="Speichern" HorizontalAlignment="Left" Margin="215,80,0,0" VerticalAlignment="Top" Width="65" FontSize="10" Background="LightBlue" BorderBrush="LightBlue" Height="25"/>
+    </Grid>
+</Window>

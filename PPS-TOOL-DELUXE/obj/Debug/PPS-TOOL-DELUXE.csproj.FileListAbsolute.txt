@@ -1,0 +1,60 @@
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\bin\Debug\PPS-TOOL-DELUXE.exe.config
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\bin\Debug\PPS-TOOL-DELUXE.exe
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\bin\Debug\PPS-TOOL-DELUXE.pdb
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.csprojResolveAssemblyReference.cache
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\MainWindow.g.cs
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\App.g.cs
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE_MarkupCompile.cache
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE_MarkupCompile.lref
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\MainWindow.baml
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.g.resources
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS_TOOL_DELUXE.Properties.Resources.resources
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.csproj.GenerateResource.Cache
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.csproj.CoreCompileInputs.cache
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.exe
+C:\Users\Lara\Source\Repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.pdb
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.csprojResolveAssemblyReference.cache
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.exe
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.pdb
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Arbeitsplatz hinzufügen.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Arbeitsplatz_bearbeiten.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Dashboard\Dashboard.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Erzeugnis bearbeiten.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Erzeugnisverwaltung.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Kaufteil bearbeiten.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Kaufteilverwaltung.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step1\Schritt1.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step2\Schritt2.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step3\Schritt3.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step4\Schritt4.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step5\Schritt5.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step6\Schritt6.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Speichern.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Subkomponente hinzufügen.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\App.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE_MarkupCompile.cache
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE_MarkupCompile.lref
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Arbeitsplatzverwalung.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Arbeitsplatzverwalung.g.cs
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\bin\Debug\PPS-TOOL-DELUXE.exe.config
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\bin\Debug\PPS-TOOL-DELUXE.exe
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\bin\Debug\PPS-TOOL-DELUXE.pdb
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Arbeitsplatz hinzufügen.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Arbeitsplatz_bearbeiten.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Dashboard\Dashboard.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Erzeugnis bearbeiten.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Erzeugnisverwaltung.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Kaufteil bearbeiten.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Kaufteilverwaltung.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step1\Schritt1.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step2\Schritt2.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step3\Schritt3.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step4\Schritt4.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step5\Schritt5.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Step6\Schritt6.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Speichern.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\Utility\Subkomponente hinzufügen.baml
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.g.resources
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS_TOOL_DELUXE.Properties.Resources.resources
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.csproj.GenerateResource.Cache
+C:\Users\bwpc\source\repos\IBSYS2-PPS-TOOL\PPS-TOOL-DELUXE\obj\Debug\PPS-TOOL-DELUXE.csproj.CoreCompileInputs.cache

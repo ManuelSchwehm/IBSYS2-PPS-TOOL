@@ -1,0 +1,19 @@
+﻿<Window x:Class="PPS_TOOL_DELUXE.Utility.ArbeitsplatzHinzufügen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PPS_TOOL_DELUXE"
+        mc:Ignorable="d"
+        Title="Arbeitsplatz hinzufügen" Height="167" Width="384">
+    <Grid>
+        <Label Content="Arbeitsplatz:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22,20,0,0" FontSize="10"/>
+        <Label Content="Rüstzeit:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,55,0,0" FontSize="10" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Fertigungszeit:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,85,0,0" FontSize="10" RenderTransformOrigin="0.5,0.5"/>
+        <ComboBox Name="Drop_Down_Arbeitsplatz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="95,25,0,0" Height="16" FontSize="10" Background="White" BorderBrush="White"/>
+        <Button Name="btn_abbrechen" Content="Abbrechen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="265,60,0,0" Height="15" FontSize="10" BorderBrush="LightGray"/>
+        <Button Name="btn_hinzufügen" Content="Hinzufügen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="265,90,0,0" RenderTransformOrigin="0.5,0.5" Height="15" FontSize="10" Background="LightBlue" BorderBrush="LightBlue"/>
+        <TextBox x:Name="Textbox_Rüstzeit" HorizontalAlignment="Left" Height="13" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Margin="95,62,0,0" FontSize="10"/>
+        <TextBox x:Name="Textbox_Fertigungszeit" HorizontalAlignment="Left" Height="13" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Margin="95,92,0,0" FontSize="10"/>
+    </Grid>
+</Window>
