@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace PPS_TOOL_DELUXE.Utility
+namespace PPS_TOOL_DELUXE.Masterdata.Workplaces.UI
 {
     public partial class ArbeitsplatzBearbeiten : Window
     {
@@ -10,9 +10,5 @@ namespace PPS_TOOL_DELUXE.Utility
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

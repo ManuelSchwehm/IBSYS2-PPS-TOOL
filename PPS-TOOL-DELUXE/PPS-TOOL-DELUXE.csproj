@@ -55,19 +55,29 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Dashboard\DashboardController.cs" />
+    <Compile Include="Dashboard\Model\Period.cs" />
+    <Compile Include="Masterdata\WorkplacesController.cs" />
+    <Compile Include="Model\BaseController.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\MasterData\ProduceItems\produceItems.cs" />
+    <Compile Include="Model\MasterData\ProduceItems\ProduceItemsModel.cs" />
+    <Compile Include="Model\MasterData\PurchaseItems\purchaseItems.cs" />
+    <Compile Include="Model\MasterData\PurchaseItems\PurchaseItemsModel.cs" />
+    <Compile Include="Model\MasterData\Workspaces\workspaces.cs" />
+    <Compile Include="Model\MasterData\Workspaces\WorkspacesModel.cs" />
     <Compile Include="Step1\Step1Controller.cs" />
     <Compile Include="Step2\Step2Controller.cs" />
     <Compile Include="Step3\Step3Controller.cs" />
     <Compile Include="Step4\Step4Controller.cs" />
     <Compile Include="Step5\Step5Controller.cs" />
     <Compile Include="Step6\Step6Controller.cs" />
-    <Compile Include="Utility\Arbeitsplatz hinzufügen.xaml.cs">
+    <Compile Include="Masterdata\Workplaces\UI\Arbeitsplatz hinzufügen.xaml.cs">
       <DependentUpon>Arbeitsplatz hinzufügen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Arbeitsplatz_bearbeiten.xaml.cs">
+    <Compile Include="Masterdata\Workplaces\UI\Arbeitsplatz_bearbeiten.xaml.cs">
       <DependentUpon>Arbeitsplatz_bearbeiten.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Dashboard.xaml.cs">
+    <Compile Include="Dashboard\UI\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\Erzeugnis bearbeiten.xaml.cs">
@@ -100,22 +110,22 @@
     <Compile Include="Utility\Speichern.xaml.cs">
       <DependentUpon>Speichern.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Arbeitsplatzverwalung.xaml.cs">
-      <DependentUpon>Arbeitsplatzverwalung.xaml</DependentUpon>
+    <Compile Include="Masterdata\Workplaces\UI\Arbeitsplatzverwaltung.xaml.cs">
+      <DependentUpon>Arbeitsplatzverwaltung.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\Subkomponente hinzufügen.xaml.cs">
       <DependentUpon>Subkomponente hinzufügen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\UtilityController.cs" />
-    <Page Include="Utility\Arbeitsplatz hinzufügen.xaml">
+    <Page Include="Masterdata\Workplaces\UI\Arbeitsplatz hinzufügen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Utility\Arbeitsplatz_bearbeiten.xaml">
+    <Page Include="Masterdata\Workplaces\UI\Arbeitsplatz_bearbeiten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dashboard\Dashboard.xaml">
+    <Page Include="Dashboard\UI\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,7 +181,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Utility\Arbeitsplatzverwalung.xaml">
+    <Page Include="Masterdata\Workplaces\UI\Arbeitsplatzverwaltung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,6 +222,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressource\iconTool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Input\" />
+    <Folder Include="Model\Output\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
