@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PPS_TOOL_DELUXE"
         mc:Ignorable="d"
-        Title="Arbeitsplatz bearbeiten" Height="350" Width="525">
+        Title="Arbeitsplatz bearbeiten" Height="350" Width="540" MinWidth="540" MinHeight="350" ResizeMode="NoResize">
     <Grid>
-        <Label Content="Arbeitsplatz bearbeiten" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,35,0,0" FontStyle="Italic"/>
-        <Label Content="Ibsys2 Tool" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.158,0.577" Margin="205,10,0,0" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Arbeitsplatz bearbeiten" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,38,0,0" FontStyle="Italic"/>
+        <Label Content="Ibsys2 Tool" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="3.158,0.577" Margin="0,16,0,0" FontSize="14" FontWeight="Bold"/>
         <Label Content="Deutsche Bezeichnung*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="78,78,0,0" RenderTransformOrigin="0.393,0.423"/>
         <Label Content="Englische Bezeichnung*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="78,101,0,0"/>
-        <Label Content="Spanische Bezeichnung*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,123,0,0"/>
+        <Label Content="Französische Bezeichnung*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,123,0,0"/>
         <Label Content="1. Schicht* (€/Min)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,146,0,0"/>
         <Label Content="2. Schicht* (€/Min)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,168,0,0"/>
         <Label Content="3. Schicht* (€/Min)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,190,0,0"/>
@@ -27,8 +27,8 @@
         <TextBox x:Name="TextBox_Überstunden" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="297,215,0,0" BorderBrush="LightBlue"/>
         <TextBox x:Name="TextBox_MaschinenK_fix" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="297,237,0,0" BorderBrush="LightBlue"/>
         <TextBox x:Name="TextBox_MaschinenK_var" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Margin="297,260,0,0" BorderBrush="LightBlue"/>
-        <Button x:Name="btn_zurück" Content="Zurück" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="20,29,0,0" FontSize="10" BorderBrush="#FFD4CCCC"/>
-        <Button x:Name="btn_speichern" Content="Speichern" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="415,31,0,0"
+        <Button x:Name="btn_zurück" Content="Zurück" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="20,30,0,0" FontSize="10" BorderBrush="#FFD4CCCC"/>
+        <Button x:Name="btn_speichern" Content="Speichern" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,30,20,0"
                 FontSize="10" BorderBrush="#FFD1D1D1"/>
         <Label Content="Pflichtfelder*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,284,0,0"/>
 

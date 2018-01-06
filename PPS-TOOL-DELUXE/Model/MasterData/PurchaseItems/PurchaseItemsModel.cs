@@ -51,6 +51,8 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.PurchaseItems
             var xmlWriter = XmlWriter.Create(path, settings);
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(purchaseItems));
             serializer.Serialize(xmlWriter, _purchaseItems);
+
+            xmlWriter.Close();
         }
     }
 }
