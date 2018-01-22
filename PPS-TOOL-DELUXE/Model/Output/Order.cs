@@ -17,5 +17,10 @@ namespace PPS_TOOL_DELUXE.Model.Output
             this.quantity = quantity;
             this.modus = modus;
         }
+
+        public Order()
+        {
+            
+        }
     }
 }

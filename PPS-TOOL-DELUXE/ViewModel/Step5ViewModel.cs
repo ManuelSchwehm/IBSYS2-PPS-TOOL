@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using System.Windows;
+using System.Xml;
+using System.Xml.Serialization;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using Microsoft.Practices.ServiceLocation;
+using Microsoft.Win32;
 using PPS_TOOL_DELUXE.Model;
 using PPS_TOOL_DELUXE.Model.MasterData.ProduceItems;
 using PPS_TOOL_DELUXE.Model.MasterData.Workspaces;
@@ -24,7 +29,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
         private List<produceItemsItem> produceItemProductionList;
         private List<workspacesWorkspace> workspaces;
         private List<produceItemsItem> produceItems;
-        public List<WorkplaceTimeModel> WorkplacesTimesNew { get; set; }
+        public ObservableCollection<WorkplaceTimeModel> WorkplacesTimesNew { get; set; }
         public ObservableCollection<int> LayersList { get; } = new ObservableCollection<int> {1, 2, 3};
 
         public Step5ViewModel()
@@ -40,10 +45,12 @@ namespace PPS_TOOL_DELUXE.ViewModel
             productionList = exportModel.productionList;
 
             produceItemProductionList = new List<produceItemsItem>();
-            WorkplacesTimesNew = new List<WorkplaceTimeModel>();
+            WorkplacesTimesNew = new ObservableCollection<WorkplaceTimeModel>();
 
             workspaces = WorkspacesModel.GetInstance().GetWorkspaces();
             produceItems = ProduceItemsModel.GetInstance().GetProduceItems();
+
+            produceItemProductionList = ProduceItemsModel.GetInstance().GetProduceItems();
 
             workspaces.ForEach(w =>
             {
@@ -76,7 +83,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
                     {
                         item.timePerWorkplace.ToList().ForEach(work =>
                         {
-                            WorkplacesTimesNew.ForEach(workNew =>
+                            WorkplacesTimesNew.ToList().ForEach(workNew =>
                             {
                                 if (workNew.Id != work.id) return;
                                 if (list.quantity > 0)
@@ -96,11 +103,11 @@ namespace PPS_TOOL_DELUXE.ViewModel
                 {
                     k.timePerWorkplace.ToList().ForEach((j => 
                     {
-                        WorkplacesTimesNew.ForEach(x => 
+                        WorkplacesTimesNew.ToList().ForEach(x => 
                         {
                             if (x.Id == j.id)
                             {
-                                x.KapaNew += x.KapaNew + j.time * quantity;
+                                x.KapaNew += j.time * quantity;
                             }
                         });
                     }));
@@ -112,7 +119,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
         {
             rLastPeriod.ordersinwork.ToList().ForEach(work => 
             {
-                WorkplacesTimesNew.ForEach(workNew => 
+                WorkplacesTimesNew.ToList().ForEach(workNew => 
                 {
                     if (workNew.Id == work.id)
                     {
@@ -124,9 +131,9 @@ namespace PPS_TOOL_DELUXE.ViewModel
 
         private void createMapOldWaitinglistWorkstations(results rLastPeriod)
         {
-            rLastPeriod.waitinglistworkstations.ToList().ForEach(wait => 
+            rLastPeriod.waitinglistworkstations?.ToList().ForEach(wait => 
             {
-                WorkplacesTimesNew.ForEach(workNew => 
+                WorkplacesTimesNew.ToList().ForEach(workNew => 
                 {
                     if (workNew.Id == wait.id)
                     {
@@ -140,9 +147,9 @@ namespace PPS_TOOL_DELUXE.ViewModel
         {
             var itemsList = new List<int>();
 
-            rLastPeriod.waitinglistworkstations.ToList().ForEach(wait =>
+            rLastPeriod.waitinglistworkstations?.ToList().ForEach(wait =>
             {
-                wait.waitinglist.ToList().ForEach(waitList=> 
+                wait.waitinglist?.ToList().ForEach(waitList=> 
                 {
                     itemsList.Add(waitList.item);
                 });
@@ -156,7 +163,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
                     {
                         produce.timePerWorkplace.ToList().ForEach(work => 
                         {
-                            WorkplacesTimesNew.ForEach(workNew => 
+                            WorkplacesTimesNew.ToList().ForEach(workNew => 
                             {
                                 if (workNew.Id == work.id)
                                 {
@@ -171,7 +178,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
 
         private void calculate()
         {
-            WorkplacesTimesNew.ForEach(i => 
+            WorkplacesTimesNew.ToList().ForEach(i => 
             {
                 i.Total = i.KapaNew + i.KapaOld + i.SetUpNew + i.SetUpOld;
 
@@ -192,7 +199,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
                 // Überstunden eintragen
                 if ((i.Total - (i.Shifts - 1) * 2400) > 2400)
                 {
-                    i.Overtime = i.Total + 100 - (i.Shifts * 2400) / 5;
+                    i.Overtime = (i.Total + 100 - (i.Shifts * 2400)) / 5;
                 }
                 if (i.Shifts == 3)
                 {
@@ -206,7 +213,36 @@ namespace PPS_TOOL_DELUXE.ViewModel
         {
             AddEverythingToExportModel();
             ServiceLocator.Current.GetInstance<MainViewModel>().export = exportModel;
-            CloseAction();
+
+            var periodNr = rLastPeriod.period;
+            var path = "./simulations/";
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            var dialog = new SaveFileDialog
+            {
+                Filter = "XML (*.xml)|*.xml",
+                Title = "XML Export",
+                FileName = $"InputPeriod{periodNr+1}.xml",
+                //InitialDirectory = path
+            };
+            if (dialog.ShowDialog() == true)
+            {
+                XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+                ns.Add("", "");
+
+                var settings = new XmlWriterSettings();
+                settings.Indent = true;
+                settings.IndentChars = ("\t");
+                settings.OmitXmlDeclaration = true;
+                var xmlWriter = XmlWriter.Create(dialog.FileName, settings);
+                var serializer = new XmlSerializer(typeof(ExportModel));
+                serializer.Serialize(xmlWriter, exportModel, ns);
+
+                xmlWriter.Flush();
+                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
+            }
         }
 
         private void AddEverythingToExportModel()
@@ -214,7 +250,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
             var workingtimeList = new List<Workingtime>();
             Workingtime newWorkingtime;
 
-            WorkplacesTimesNew.ForEach(w =>
+            WorkplacesTimesNew.ToList().ForEach(w =>
             {
                 newWorkingtime = new Workingtime(w.Id, w.Shifts > 3 ? 3 : w.Shifts, w.Overtime);
                 workingtimeList.Add(newWorkingtime);

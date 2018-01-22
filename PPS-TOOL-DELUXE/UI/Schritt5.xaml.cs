@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using Microsoft.Practices.ServiceLocation;
+using PPS_TOOL_DELUXE.ViewModel;
 
 namespace PPS_TOOL_DELUXE.UI
 {
@@ -7,6 +9,9 @@ namespace PPS_TOOL_DELUXE.UI
         public Step5()
         {
             InitializeComponent();
+            var viewModel = ServiceLocator.Current.GetInstance<Step5ViewModel>();
+            if (viewModel.CloseAction == null)
+                viewModel.CloseAction = Close;
         }
 
         private void Schritt5_abbrechen_Click(object sender, RoutedEventArgs e)
@@ -16,11 +21,10 @@ namespace PPS_TOOL_DELUXE.UI
             Close();
         }
 
-        private void Schritt5_export_Click(object sender, RoutedEventArgs e)
+        private void Schritt5_ContentRendered(object sender, System.EventArgs e)
         {
-            var dashboard = new Dashboard();
-            dashboard.Show();
-            Close();
+            var viewModel = ServiceLocator.Current.GetInstance<Step5ViewModel>();
+            viewModel.Initialize();
         }
     }
 }

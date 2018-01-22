@@ -17,5 +17,10 @@ namespace PPS_TOOL_DELUXE.Model.Output
             this.shift = shift;
             this.overtime = overtime;
         }
+
+        public Workingtime()
+        {
+            
+        }
     }
 }

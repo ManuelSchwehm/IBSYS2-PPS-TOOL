@@ -7,7 +7,7 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.ProduceItems
 {
     public class ProduceItemsModel
     {
-        private static readonly string DEFAULTFILE = "/masterdata/produce-items.xml";
+        private static readonly string DEFAULTFILE = "/basedata/produce-items.xml";
         private static ProduceItemsModel _instance;
         private produceItems _produceItems;
 
@@ -45,11 +45,14 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.ProduceItems
 
         public void SaveXmlFile()
         {
-            if (!Directory.Exists("./masterdata/"))
-                Directory.CreateDirectory("./masterdata/");
+            if (!Directory.Exists("./basedata/"))
+                Directory.CreateDirectory("./basedata/");
 
             var path = "." + DEFAULTFILE;
             var settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = ("\t");
+            settings.OmitXmlDeclaration = true;
             var xmlWriter = XmlWriter.Create(path, settings);
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(produceItems));
             serializer.Serialize(xmlWriter, _produceItems);

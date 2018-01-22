@@ -17,5 +17,10 @@ namespace PPS_TOOL_DELUXE.Model.Output
             this.losequantity = losequantity;
             this.delay = delay;
         }
+
+        public QuantityControl()
+        {
+            
+        }
     }
 }

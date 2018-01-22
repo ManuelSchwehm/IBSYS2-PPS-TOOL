@@ -7,7 +7,7 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.PurchaseItems
 {
     public class PurchaseItemsModel
     {
-        private static readonly string DEFAULTFILE = "/masterdata/purchase-items.xml";
+        private static readonly string DEFAULTFILE = "/basedata/purchase-items.xml";
         private static PurchaseItemsModel _instance;
         private purchaseItems _purchaseItems;
         public purchaseItems Purchases
@@ -48,11 +48,14 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.PurchaseItems
 
         public void SaveXmlFile()
         {
-            if (!Directory.Exists("./masterdata/"))
-                Directory.CreateDirectory("./masterdata/");
+            if (!Directory.Exists("./basedata/"))
+                Directory.CreateDirectory("./basedata/");
 
             var path = "." + DEFAULTFILE;
             var settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = ("\t");
+            settings.OmitXmlDeclaration = true;
             var xmlWriter = XmlWriter.Create(path, settings);
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(purchaseItems));
             serializer.Serialize(xmlWriter, _purchaseItems);

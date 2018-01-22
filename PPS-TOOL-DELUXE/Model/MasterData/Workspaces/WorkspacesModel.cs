@@ -7,7 +7,7 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.Workspaces
 {
     public class WorkspacesModel
     {
-        private static readonly string DEFAULTFILE = "/masterdata/workspaces.xml";
+        private static readonly string DEFAULTFILE = "/basedata/workspaces.xml";
         private static WorkspacesModel _instance;
         private workspaces _workspaces;
         public workspaces Workspaces
@@ -48,11 +48,14 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.Workspaces
 
         public void SaveXmlFile()
         {
-            if (!Directory.Exists("./masterdata/"))
-                Directory.CreateDirectory("./masterdata/");
+            if (!Directory.Exists("./basedata/"))
+                Directory.CreateDirectory("./basedata/");
 
             var path = "." + DEFAULTFILE;
             var settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = ("\t");
+            settings.OmitXmlDeclaration = true;
             var xmlWriter = XmlWriter.Create(path, settings);
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(workspaces));
             serializer.Serialize(xmlWriter, _workspaces);

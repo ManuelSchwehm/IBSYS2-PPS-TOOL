@@ -14,5 +14,10 @@ namespace PPS_TOOL_DELUXE.Model.Output
             this.article = article;
             this.quantity = quantity;
         }
+
+        public Production()
+        {
+            
+        }
     }
 }

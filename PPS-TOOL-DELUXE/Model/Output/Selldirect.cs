@@ -20,5 +20,10 @@ namespace PPS_TOOL_DELUXE.Model.Output
             this.price = price;
             this.penalty = penalty;
         }
+
+        public Selldirect()
+        {
+            
+        }
     }
 }

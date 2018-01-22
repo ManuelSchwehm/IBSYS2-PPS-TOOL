@@ -3,8 +3,8 @@ using System.Xml.Serialization;
 
 namespace PPS_TOOL_DELUXE.Model.Output
 {
-    [XmlRoot]
-    public class ExportModel
+        [XmlRoot("input")]
+        public class ExportModel
     {
         [XmlElement]
         public QuantityControl quantityControl { get; set; }
