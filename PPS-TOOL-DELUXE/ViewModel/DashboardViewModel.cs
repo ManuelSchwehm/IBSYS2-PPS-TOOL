@@ -156,15 +156,17 @@ namespace PPS_TOOL_DELUXE.ViewModel
             purchasesWindow.ShowDialog();
         }
 
-        public void FlagDeClick() => ReloadDashboard(new CultureInfo("de-DE"));
+        public void FlagDeClick() => ReloadDashboard(new CultureInfo("de"));
 
-        public void FlagEnClick() => ReloadDashboard(new CultureInfo("en-GB"));
+        public void FlagEnClick() => ReloadDashboard(new CultureInfo("en"));
 
-        public void FlagFrClick() => ReloadDashboard(new CultureInfo("fr-FR"));
+        public void FlagFrClick() => ReloadDashboard(new CultureInfo("fr"));
 
         private void ReloadDashboard(CultureInfo locale)
         {
-            CurrentLanguage = locale;
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+                locale;
+            //TODO reload
             throw new NotImplementedException();
         }
     }

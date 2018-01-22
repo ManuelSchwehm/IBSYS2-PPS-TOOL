@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Globalization;
+using System.Windows;
+using System.Windows.Input;
 using PPS_TOOL_DELUXE.ViewModel;
 
 namespace PPS_TOOL_DELUXE.UI
@@ -37,6 +39,27 @@ namespace PPS_TOOL_DELUXE.UI
         private void btn_Kaufteile_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.PurchaseItemsClick();
+        }
+
+        private void BtnGerman_Click(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+                new CultureInfo("de");
+            CommandManager.InvalidateRequerySuggested();
+        }
+
+        private void BtnEnglish_Click(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+                new CultureInfo("en-GB");
+            CommandManager.InvalidateRequerySuggested();
+        }
+
+        private void BtnFrench_Click(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+                new CultureInfo("fr-FR");
+            CommandManager.InvalidateRequerySuggested();
         }
     }
 }

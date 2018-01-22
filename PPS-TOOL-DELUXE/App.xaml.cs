@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Globalization;
+﻿using System.Globalization;
+using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Resources;
 using System.Windows;
-using System.Windows.Markup;
 
 namespace PPS_TOOL_DELUXE
 {
@@ -24,6 +20,29 @@ namespace PPS_TOOL_DELUXE
         public App()
         {
             CurrentCulture = CultureInfo.CurrentCulture;
+            //WriteRessources();
+        }
+
+        private void WriteRessources()
+        {
+            /*var resultsPath = "./ressources/";
+            var files = Directory.GetFiles(resultsPath);
+            var i = 0;
+            files.ToList().ForEach(path =>
+            {
+                var fileStream = new FileStream(path, FileMode.Open);
+                JavaProperties properties = new JavaProperties();
+                properties.Load(fileStream);
+                ResXResourceWriter writer = new ResXResourceWriter($"c:\\temp\\Resource{i}.resx");
+                foreach (var keyValuePair in properties)
+                {
+                    writer.AddResource(keyValuePair.Key, keyValuePair.Value);
+                }
+                writer.Generate();
+                writer.Close();
+                fileStream.Close();
+                ++i;
+            });*/
         }
     }
 }

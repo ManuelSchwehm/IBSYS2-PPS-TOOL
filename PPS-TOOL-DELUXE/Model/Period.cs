@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using PPS_TOOL_DELUXE.Annotations;
-using PropertyChanged;
 
 namespace PPS_TOOL_DELUXE.Model
 {

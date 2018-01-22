@@ -215,7 +215,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
             ServiceLocator.Current.GetInstance<MainViewModel>().export = exportModel;
 
             var periodNr = rLastPeriod.period;
-            var path = "./simulations/";
+            var path = AppDomain.CurrentDomain.BaseDirectory + @"simulations\";
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
@@ -224,7 +224,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
                 Filter = "XML (*.xml)|*.xml",
                 Title = "XML Export",
                 FileName = $"InputPeriod{periodNr+1}.xml",
-                //InitialDirectory = path
+                InitialDirectory = path
             };
             if (dialog.ShowDialog() == true)
             {
