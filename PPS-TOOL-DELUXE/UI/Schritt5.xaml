@@ -60,7 +60,7 @@
         <DataGrid x:Name="producesGrid"
             AutoGenerateColumns="false"
             HorizontalAlignment="Left"
-            Height="281"
+            Height="313"
             Margin="10,80,0,0"
             VerticalAlignment="Top"
             Width="523"
@@ -167,12 +167,6 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Schritt5_weiter_Copy" Content="" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,15"
-            FontSize="10" BorderBrush="#FFD1D1D1" Width="40" Height="17">
-            <Button.Background>
-                <ImageBrush ImageSource="/PPS-TOOL-DELUXE;component/Ressource/graph.jpg"/>
-            </Button.Background>
-        </Button>
 
     </Grid>
 </Window>

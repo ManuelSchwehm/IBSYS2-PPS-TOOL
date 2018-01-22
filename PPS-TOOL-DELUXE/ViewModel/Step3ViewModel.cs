@@ -281,7 +281,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
 
             foreach (var t in orders)
             {
-                if (!(String.IsNullOrEmpty(t)))
+                if (!string.IsNullOrEmpty(t))
                 {
                     String[] order = t.Split(':');
                     arrivalOrderTime = Double.Parse(order[0]) - rLastPeriod.period;

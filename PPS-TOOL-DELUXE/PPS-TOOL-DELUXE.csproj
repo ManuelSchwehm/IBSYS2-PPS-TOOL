@@ -78,6 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\DragAndDrop\UIHelpers.cs" />
     <Compile Include="Model\Forecast.cs" />
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Output\ExportModel.cs" />
@@ -94,8 +95,10 @@
     <Compile Include="Model\PurchaseItemUsage.cs" />
     <Compile Include="Model\PurchaseModel.cs" />
     <Compile Include="Model\results.cs" />
+    <Compile Include="Model\DragAndDrop\ShareConfiguration.cs" />
     <Compile Include="Model\TimeModel.cs" />
     <Compile Include="Model\UsageCreator.cs" />
+    <Compile Include="Model\WorkplaceTimeModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -269,7 +272,9 @@
   <ItemGroup>
     <Resource Include="Ressource\iconTool.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Ressource\DragInsert.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressource\buttonFrance.png" />
   </ItemGroup>

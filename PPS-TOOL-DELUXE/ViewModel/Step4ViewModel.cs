@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using GalaSoft.MvvmLight;
@@ -12,29 +13,58 @@ namespace PPS_TOOL_DELUXE.ViewModel
 {
     public class Step4ViewModel : ViewModelBase
     {
-        private results rLastPeriod;
+        public Action CloseAction { get; set; }
+        public Action ShowNextAction { get; set; }
+
         private ExportModel exportModel;
 
         public ObservableCollection<ProductionOrderModel> ProduceItemsAll { get; } =
             new ObservableCollection<ProductionOrderModel>();
+
+        public ProductionOrderModel SelectedRow { get; set; }
 
         public ObservableCollection<int> ProduceItemIds { get; set; }
 
         public Step4ViewModel()
         {
             NextCommand = new RelayCommand(NextClick);
+            AddRowCommand = new RelayCommand(AddRow);
+            DeleteRowCommand = new RelayCommand(DeleteRow);
         }
 
-        public RelayCommand NextCommand;
+        private void AddRow()
+        {
+            ProduceItemsAll.Add(new ProductionOrderModel(ProduceItemIds.ToList(), 1, 0));
+        }
+        private void DeleteRow()
+        { 
+            ProduceItemsAll.Remove(SelectedRow);
+        }
+
+        public RelayCommand NextCommand { get; set; }
+        public RelayCommand AddRowCommand { get; set; }
+        public RelayCommand DeleteRowCommand { get; set; }
 
         private void NextClick()
         {
-            throw new System.NotImplementedException();
+            AddEverythingToExportModel();
+            ServiceLocator.Current.GetInstance<MainViewModel>().export = exportModel;
+            CloseAction();
+            ShowNextAction();
+        }
+
+        private void AddEverythingToExportModel()
+        {
+            var productionList = new List<Production>();
+            ProduceItemsAll.ToList().Where(item=> item.Number > 0).ToList().ForEach(item =>
+            {
+                productionList.Add(new Production(item.SelectedItem, item.Number));
+            });
+            exportModel.productionList = productionList;
         }
 
         public void Initialize()
         {
-            rLastPeriod = ServiceLocator.Current.GetInstance<DashboardViewModel>().LastPeriod;
             exportModel = ServiceLocator.Current.GetInstance<MainViewModel>().export;
 
             var allProduceItems = ProduceItemsModel.GetInstance().GetProduceItems();
@@ -46,7 +76,6 @@ namespace PPS_TOOL_DELUXE.ViewModel
                 ProduceItemsAll.Add(new ProductionOrderModel(new List<int>(listOfIds), item.article, item.quantity));
             });
 
-            //TODO empty line at end
         }
     }
 }

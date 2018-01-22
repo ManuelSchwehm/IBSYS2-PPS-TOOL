@@ -51,11 +51,13 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="layoutRoot"
+        MouseLeftButtonUp="OnMouseLeftButtonUp"
+        MouseMove="OnMouseMove">
         <Label Content="Fertigungsaufträge" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,38,0,0" FontStyle="Italic"/>
         <Label Content="OptiPPS" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="3.158,0.577" Margin="0,15,0,0" FontSize="14" FontWeight="Bold"/>
         <Button x:Name="Schritt4_abbrechen" Content="Abbrechen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="20,30,0,0" FontSize="10" BorderBrush="#FFD4CCCC" Click="Schritt4_abbrechen_Click"/>
-        <Button x:Name="Schritt4_weiter" Content="Weiter" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,30,20,0" FontSize="10" BorderBrush="#FFD1D1D1" Click="Schritt4_weiter_Click"/>
+        <Button x:Name="Schritt4_weiter" Content="Weiter" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,30,20,0" FontSize="10" BorderBrush="#FFD1D1D1" Command="{Binding NextCommand}" />
         <ProgressBar HorizontalAlignment="Center" Height="10" Margin="0,65,0,0" VerticalAlignment="Top" Width="165" Value="80"/>
         <DataGrid x:Name="producesGrid"
             AutoGenerateColumns="false"
@@ -63,7 +65,10 @@
             Width="221"
             ScrollViewer.CanContentScroll="True"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
-            SelectionMode="Single" HorizontalAlignment="Center" ItemsSource="{Binding ProduceItemsAll}">
+            SelectionMode="Single" HorizontalAlignment="Center" ItemsSource="{Binding ProduceItemsAll, NotifyOnSourceUpdated=True}"
+            BeginningEdit="OnBeginEdit"
+            CellEditEnding="OnEndEdit"
+            PreviewMouseLeftButtonDown="OnMouseLeftButtonDown" SelectionChanged="producesGrid_SelectionChanged" SelectedItem="{Binding SelectedRow}">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="LightBlue" />
@@ -91,14 +96,40 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                    <DataGridTextColumn Binding="{Binding Number}" ClipboardContentBinding="{x:Null}"
+                <DataGridTextColumn Binding="{Binding Number}" ClipboardContentBinding="{x:Null}"
                     Header="Anzahl" Width="6*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Schritt4_weiter_Copy" Content="" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="30" Margin="0,0,0,10" FontSize="10" BorderBrush="#FFD1D1D1" Height="30">
-            <Button.Background>
-                <ImageBrush ImageSource="/PPS-TOOL-DELUXE;component/Ressource/Prioritization.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
+
+        <!-- Drag and Drop Popup -->
+        <Popup
+            x:Name="popup1"
+            IsHitTestVisible="False"
+            Placement="RelativePoint"
+            PlacementTarget="{Binding ElementName=Schritt4}"
+            AllowsTransparency="True">
+            <Border
+                BorderBrush="LightSteelBlue"
+                BorderThickness="2"
+                Background="White"
+                Opacity="0.75">
+                <StackPanel
+                    Orientation="Horizontal"
+                    Margin="4,3,8,3">
+                    <Image
+                        Source="/Ressource/DragInsert.png"
+                        Width="16"
+                        Height="16" />
+                    <TextBlock
+                        FontSize="14"
+                        FontWeight="Bold"
+                        VerticalAlignment="Center"
+                        Text="{Binding ElementName=Schritt4, Path=DraggedItem.SelectedItem}"
+                        Margin="8,0,0,0" />
+                </StackPanel>
+            </Border>
+        </Popup>
+        <Button x:Name="btn_plus" Content="+" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,30,15" FontSize="10" BorderBrush="#FFD1D1D1" Command="{Binding AddRowCommand}" Width="17" Height="17" />
+        <Button x:Name="btn_minus" Content="-" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30,0,0,15" FontSize="10" BorderBrush="#FFD1D1D1" Command="{Binding DeleteRowCommand}" Width="17" Height="17" IsEnabled="False" />
     </Grid>
-    </Window>
+</Window>
