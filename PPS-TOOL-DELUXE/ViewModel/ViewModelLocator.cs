@@ -26,6 +26,22 @@ namespace PPS_TOOL_DELUXE.ViewModel
 
             SimpleIoc.Default.Register<DashboardViewModel>();
             SimpleIoc.Default.Register<WorkplacesViewModel>();
+            SimpleIoc.Default.Register<PurchasesViewModel>();
+            SimpleIoc.Default.Register<ProducesViewModel>();
+            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<Step1ViewModel>();
+            SimpleIoc.Default.Register<Step2ViewModel>();
+            SimpleIoc.Default.Register<Step3ViewModel>();
+            SimpleIoc.Default.Register<Step4ViewModel>();
+            SimpleIoc.Default.Register<Step5ViewModel>();
+        }
+
+        public MainViewModel Main
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
         }
 
         public DashboardViewModel Dashboard
@@ -41,6 +57,58 @@ namespace PPS_TOOL_DELUXE.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<WorkplacesViewModel>();
+            }
+        }
+
+        public PurchasesViewModel Purchases
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<PurchasesViewModel>();
+            }
+        }
+
+        public ProducesViewModel Produces
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ProducesViewModel>();
+            }
+        }
+
+        public Step1ViewModel Step1
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Step1ViewModel>();
+            }
+        }
+        public Step2ViewModel Step2
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Step2ViewModel>();
+            }
+        }
+        public Step3ViewModel Step3
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Step3ViewModel>();
+            }
+        }
+        public Step4ViewModel Step4
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Step4ViewModel>();
+            }
+        }
+        public Step5ViewModel Step5
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<Step5ViewModel>();
             }
         }
 

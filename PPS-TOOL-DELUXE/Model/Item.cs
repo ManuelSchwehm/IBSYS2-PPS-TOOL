@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace PPS_TOOL_DELUXE.Model
 {
-    class Item
+    public class Item
     {
+        public int id { get; set; }
+        public int need { get; set; }
+        public List<Item> item { get; set; }
+
+        public Item(int id, int need, List<Item> item)
+        {
+            this.id = id;
+            this.need = need;
+            this.item = item;
+        }
     }
 }

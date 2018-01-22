@@ -10,6 +10,11 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.Workspaces
         private static readonly string DEFAULTFILE = "/masterdata/workspaces.xml";
         private static WorkspacesModel _instance;
         private workspaces _workspaces;
+        public workspaces Workspaces
+        {
+            get => _workspaces;
+            set => _workspaces = value;
+        }
 
         private WorkspacesModel() => LoadXmlFile();
 

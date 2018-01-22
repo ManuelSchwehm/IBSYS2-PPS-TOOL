@@ -10,6 +10,11 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.PurchaseItems
         private static readonly string DEFAULTFILE = "/masterdata/purchase-items.xml";
         private static PurchaseItemsModel _instance;
         private purchaseItems _purchaseItems;
+        public purchaseItems Purchases
+        {
+            get => _purchaseItems;
+            set => _purchaseItems = value;
+        }
 
         private PurchaseItemsModel() => LoadXmlFile();
 

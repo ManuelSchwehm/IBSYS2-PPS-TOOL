@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -10,9 +8,9 @@ using System.Windows.Controls;
 using System.Xml;
 using GalaSoft.MvvmLight;
 using Microsoft.Win32;
-using PPS_TOOL_DELUXE.Masterdata.Workplaces.UI;
 using PPS_TOOL_DELUXE.Model;
 using PPS_TOOL_DELUXE.UI;
+using PPS_TOOL_DELUXE.Utility;
 
 namespace PPS_TOOL_DELUXE.ViewModel
 {
@@ -21,34 +19,29 @@ namespace PPS_TOOL_DELUXE.ViewModel
 
         private CultureInfo CurrentLanguage { get; set; }
 
-        private ObservableCollection<Period> _periods;
+        private ObservableCollection<Period> _periods = new ObservableCollection<Period>();
         public ObservableCollection<Period> Periods
         {
-            get { return _periods; }
+            get => _periods;
             set
             {
                 _periods = value;
-                //RaisePropertyChanged();
+                RaisePropertyChanged();
             }
         }
 
-        private results LastPeriod { get; set; }
+        public results LastPeriod { get; set; }
 
-        //TODO Binding
-        private Label LabPage;
-        private Label LabDetail;
-        private Label LabMasterAdmin;
-        private Button BtnImport;
-        private Button BtnPlan;
-        private Button BtnWorkplaces;
-        private Button BtnProduces;
-        private Button BtnPurchases;
-        private Button BtnGerman;
-        private Button BtnEnglish;
-        private Button BtnFrench;
-        private DataGrid GridPeriods;
-        //TODO dataGrid headers
-
+        private bool _canPlan;
+        public bool CanPlan
+        {
+            get => _canPlan;
+            set
+            {
+                _canPlan = value;
+                RaisePropertyChanged();
+            }
+        }
         
         public DashboardViewModel()
         {
@@ -57,11 +50,9 @@ namespace PPS_TOOL_DELUXE.ViewModel
 
         private void LoadDashboard()
         {
-            Periods = new ObservableCollection<Period>();
+            Periods.Clear();
             LoadXmlInputs();
-            /*if (Periods.Count > 0)
-                GridPeriods.ItemsSource = Periods;
-            else BtnPlan.IsEnabled = false;*/ //TODO fix this
+            CanPlan = Periods.Count > 0;
         }
 
         private void LoadXmlInputs()
@@ -77,7 +68,7 @@ namespace PPS_TOOL_DELUXE.ViewModel
                     LoadXmlInput(path);
             });
 
-            //Periods = Periods.OrderByDescending(p => p.Id).ToList(); //TODO handle duplicate ids
+            //Periods = new ObservableCollection<Period>(Periods.OrderByDescending(p => p.Id).ToList());//TODO handle duplicate ids
         }
 
         private void LoadXmlInput(string path)
@@ -87,14 +78,15 @@ namespace PPS_TOOL_DELUXE.ViewModel
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(results));
             var result = (results)serializer.Deserialize(xmlReader);
             xmlReader.Close();
-            Periods.Add(new Period
+            var p = new Period
             {
                 Id = result.period,
                 Efficiency = result.result.general.effiency.current,
                 Profit = result.result.summary.profit.current,
                 Totalprofit = result.result.summary.profit.all,
                 Workload = result.result.general.relpossiblenormalcapacity.current
-            });
+            };
+            Periods.Add(p);
 
             if (LastPeriod == null || LastPeriod.period < result.period)
                 LastPeriod = result;
@@ -103,14 +95,16 @@ namespace PPS_TOOL_DELUXE.ViewModel
         public void WorkspacesClick()
         {
             var workspacesWindow = new Arbeitsplatzverwaltung();
-            workspacesWindow.Show();
+            workspacesWindow.ShowDialog();
         }
 
         public void ImportPeriodClick()
         {
-            var dialog = new OpenFileDialog();
-            dialog.Filter = "XML (*.xml)|*.xml";
-            dialog.Title = "XML Import";
+            var dialog = new OpenFileDialog
+            {
+                Filter = "XML (*.xml)|*.xml",
+                Title = "XML Import"
+            };
             var fileOpened = dialog.ShowDialog();
 
             if (fileOpened.GetValueOrDefault() && File.Exists(dialog.FileName))
@@ -146,17 +140,20 @@ namespace PPS_TOOL_DELUXE.ViewModel
 
         public void PlanPeriodClick()
         {
-            throw new NotImplementedException();
+            var window = new Step1();
+            window.Show();
         }
 
         public void ProduceItemsClick()
         {
-            throw new NotImplementedException();
+            var producesWindow = new Erzeugnisverwaltung();
+            producesWindow.ShowDialog();
         }
 
         public void PurchaseItemsClick()
         {
-            throw new NotImplementedException();
+            var purchasesWindow = new Kaufteilverwaltung();
+            purchasesWindow.ShowDialog();
         }
 
         public void FlagDeClick() => ReloadDashboard(new CultureInfo("de-DE"));

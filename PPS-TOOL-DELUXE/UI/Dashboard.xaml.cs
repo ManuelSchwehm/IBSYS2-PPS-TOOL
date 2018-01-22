@@ -5,21 +5,23 @@ namespace PPS_TOOL_DELUXE.UI
 {
     public partial class Dashboard
     {
-        private DashboardViewModel _viewModel;
+        private readonly DashboardViewModel _viewModel;
         public Dashboard()
         {
             InitializeComponent();
-            _viewModel = new DashboardViewModel();
+            _viewModel = DataContext as DashboardViewModel;
         }
 
         private void btn_Periode_importieren_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.ImportPeriodClick();
+            GridPeriods.Items.Refresh();
         }
 
         private void btn_Periode_planen_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.PlanPeriodClick();
+            Close();
         }
 
         private void btn_Arbeitsplätze_Click(object sender, RoutedEventArgs e)

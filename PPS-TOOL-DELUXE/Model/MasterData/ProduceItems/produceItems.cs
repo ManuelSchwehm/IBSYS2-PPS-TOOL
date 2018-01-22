@@ -57,7 +57,23 @@ public partial class produceItemsItem {
     private double valueField;
     
     private produceItemsItemWorkplace[] timePerWorkplaceField;
-    
+
+    public string WorkplacesToString()
+    {
+        var result = "";
+        foreach (var workplace in timePerWorkplaceField)
+            result += $"{workplace.id};";
+        return result;
+    }
+
+    public string SubComponentsToString()
+    {
+        var result = "";
+        foreach (var component in subComponentListField)
+            result += $"{component.id};";
+        return result;
+    }
+
     /// <remarks/>
     public int id {
         get {

@@ -13,6 +13,8 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconTool.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
@@ -46,8 +51,12 @@
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
+    <Reference Include="PropertyChanged, Version=2.2.4.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
+      <HintPath>packages\PropertyChanged.Fody.2.2.4.0\lib\net452\PropertyChanged.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -69,59 +78,78 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Forecast.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Output\ExportModel.cs" />
+    <Compile Include="Model\Output\Order.cs" />
+    <Compile Include="Model\Output\Production.cs" />
+    <Compile Include="Model\Output\Purchaseorder.cs" />
+    <Compile Include="Model\Output\QuantityControl.cs" />
+    <Compile Include="Model\Output\Selldirect.cs" />
+    <Compile Include="Model\Output\Sellwish.cs" />
+    <Compile Include="Model\Output\Workingtime.cs" />
+    <Compile Include="Model\PlannedSafetystock.cs" />
+    <Compile Include="Model\PlanningModel.cs" />
+    <Compile Include="Model\ProductionOrderModel.cs" />
+    <Compile Include="Model\PurchaseItemUsage.cs" />
+    <Compile Include="Model\PurchaseModel.cs" />
     <Compile Include="Model\results.cs" />
+    <Compile Include="Model\TimeModel.cs" />
+    <Compile Include="Model\UsageCreator.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Resources\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\DashboardViewModel.cs" />
     <Compile Include="Model\Period.cs" />
+    <Compile Include="ViewModel\ProducesViewModel.cs" />
+    <Compile Include="ViewModel\PurchasesViewModel.cs" />
+    <Compile Include="ViewModel\Step1ViewModel.cs" />
+    <Compile Include="ViewModel\Step3ViewModel.cs" />
+    <Compile Include="ViewModel\Step5ViewModel.cs" />
+    <Compile Include="ViewModel\Step4ViewModel.cs" />
+    <Compile Include="ViewModel\Step2ViewModel.cs" />
     <Compile Include="ViewModel\WorkplacesViewModel.cs" />
-    <Compile Include="Model\BaseController.cs" />
-    <Compile Include="Model\Item.cs" />
     <Compile Include="Model\MasterData\ProduceItems\produceItems.cs" />
     <Compile Include="Model\MasterData\ProduceItems\ProduceItemsModel.cs" />
     <Compile Include="Model\MasterData\PurchaseItems\purchaseItems.cs" />
     <Compile Include="Model\MasterData\PurchaseItems\PurchaseItemsModel.cs" />
     <Compile Include="Model\MasterData\Workspaces\workspaces.cs" />
     <Compile Include="Model\MasterData\Workspaces\WorkspacesModel.cs" />
-    <Compile Include="Step1\Step1Controller.cs" />
-    <Compile Include="Step2\Step2Controller.cs" />
-    <Compile Include="Step3\Step3Controller.cs" />
-    <Compile Include="Step4\Step4Controller.cs" />
-    <Compile Include="Step5\Step5Controller.cs" />
-    <Compile Include="Step6\Step6Controller.cs" />
-    <Compile Include="Masterdata\Workplaces\UI\Arbeitsplatz hinzufügen.xaml.cs">
+    <Compile Include="UI\Arbeitsplatz hinzufügen.xaml.cs">
       <DependentUpon>Arbeitsplatz hinzufügen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Masterdata\Workplaces\UI\Arbeitsplatz_bearbeiten.xaml.cs">
+    <Compile Include="UI\Arbeitsplatz_bearbeiten.xaml.cs">
       <DependentUpon>Arbeitsplatz_bearbeiten.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Erzeugnis bearbeiten.xaml.cs">
+    <Compile Include="UI\Erzeugnis bearbeiten.xaml.cs">
       <DependentUpon>Erzeugnis bearbeiten.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Erzeugnisverwaltung.xaml.cs">
+    <Compile Include="UI\Erzeugnisverwaltung.xaml.cs">
       <DependentUpon>Erzeugnisverwaltung.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Kaufteil bearbeiten.xaml.cs">
+    <Compile Include="UI\Kaufteil bearbeiten.xaml.cs">
       <DependentUpon>Kaufteil bearbeiten.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Kaufteilverwaltung.xaml.cs">
+    <Compile Include="UI\Kaufteilverwaltung.xaml.cs">
       <DependentUpon>Kaufteilverwaltung.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Step2\Schritt2.xaml.cs">
+    <Compile Include="UI\Schritt2.xaml.cs">
       <DependentUpon>Schritt2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Step3\Schritt3.xaml.cs">
+    <Compile Include="UI\Schritt3.xaml.cs">
       <DependentUpon>Schritt3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Step4\Schritt4.xaml.cs">
+    <Compile Include="UI\Schritt4.xaml.cs">
       <DependentUpon>Schritt4.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Step5\Schritt5.xaml.cs">
+    <Compile Include="UI\Schritt5.xaml.cs">
       <DependentUpon>Schritt5.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Step6\Schritt6.xaml.cs">
-      <DependentUpon>Schritt6.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\Speichern.xaml.cs">
       <DependentUpon>Speichern.xaml</DependentUpon>
@@ -129,17 +157,16 @@
     <Compile Include="UI\Arbeitsplatzverwaltung.xaml.cs">
       <DependentUpon>Arbeitsplatzverwaltung.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\Subkomponente hinzufügen.xaml.cs">
+    <Compile Include="UI\Subkomponente hinzufügen.xaml.cs">
       <DependentUpon>Subkomponente hinzufügen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utility\UtilityController.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Page Include="Masterdata\Workplaces\UI\Arbeitsplatz hinzufügen.xaml">
+    <Page Include="UI\Arbeitsplatz hinzufügen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Masterdata\Workplaces\UI\Arbeitsplatz_bearbeiten.xaml">
+    <Page Include="UI\Arbeitsplatz_bearbeiten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,23 +174,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Utility\Erzeugnis bearbeiten.xaml">
+    <Page Include="UI\Erzeugnis bearbeiten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Utility\Erzeugnisverwaltung.xaml">
+    <Page Include="UI\Erzeugnisverwaltung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Utility\Kaufteil bearbeiten.xaml">
+    <Page Include="UI\Kaufteil bearbeiten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Utility\Kaufteilverwaltung.xaml">
+    <Page Include="UI\Kaufteilverwaltung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Step1\Schritt1.xaml">
+    <Page Include="UI\Schritt1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -171,27 +198,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Step1\Schritt1.xaml.cs">
+    <Compile Include="UI\Schritt1.xaml.cs">
       <DependentUpon>Schritt1.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Step2\Schritt2.xaml">
+    <Page Include="UI\Schritt2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Step3\Schritt3.xaml">
+    <Page Include="UI\Schritt3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Step4\Schritt4.xaml">
+    <Page Include="UI\Schritt4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Step5\Schritt5.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Step6\Schritt6.xaml">
+    <Page Include="UI\Schritt5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,7 +226,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Utility\Subkomponente hinzufügen.xaml">
+    <Page Include="UI\Subkomponente hinzufügen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -226,6 +249,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -242,8 +269,28 @@
   <ItemGroup>
     <Resource Include="Ressource\iconTool.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Model\Output\" />
+    <Resource Include="Ressource\buttonFrance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AppIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconTool.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\Prioritization.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressource\graph.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Fody.2.3.17\build\net452\Fody.targets" Condition="Exists('packages\Fody.2.3.17\build\net452\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Fody.2.3.17\build\net452\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.2.3.17\build\net452\Fody.targets'))" />
+  </Target>
 </Project>

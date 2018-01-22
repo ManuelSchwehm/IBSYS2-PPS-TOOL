@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressource/icontool.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressource/graph.jpg")]
 
 

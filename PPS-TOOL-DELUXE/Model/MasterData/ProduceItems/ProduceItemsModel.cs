@@ -11,6 +11,8 @@ namespace PPS_TOOL_DELUXE.Model.MasterData.ProduceItems
         private static ProduceItemsModel _instance;
         private produceItems _produceItems;
 
+        public produceItems Produces { get => _produceItems; set => _produceItems = value; }
+
         private ProduceItemsModel() => LoadXmlFile();
 
         public static ProduceItemsModel GetInstance()

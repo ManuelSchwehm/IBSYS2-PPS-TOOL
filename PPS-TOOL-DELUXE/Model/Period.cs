@@ -1,6 +1,11 @@
-﻿namespace PPS_TOOL_DELUXE.Model
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using PPS_TOOL_DELUXE.Annotations;
+using PropertyChanged;
+
+namespace PPS_TOOL_DELUXE.Model
 {
-    public class Period
+    public class Period : INotifyPropertyChanged
     {
         public int Id { get; set; }
         public string Efficiency { get; set; }
@@ -21,5 +26,8 @@
             Profit = profit;
             Totalprofit = totalprofit;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
     }
 }
