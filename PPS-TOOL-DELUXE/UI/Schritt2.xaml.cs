@@ -24,11 +24,6 @@ namespace PPS_TOOL_DELUXE.UI
             Close();
         }
 
-        private void Schritt2_Weiter_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
         private void Schritt2_ContentRendered(object sender, System.EventArgs e)
         {
             var viewModel = ServiceLocator.Current.GetInstance<Step2ViewModel>();

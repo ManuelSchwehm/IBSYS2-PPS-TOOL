@@ -8,7 +8,7 @@
         x:Class="PPS_TOOL_DELUXE.UI.Dashboard"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="OptiPPS" DataContext="{Binding Dashboard, Source={StaticResource Locator}}" Height="350" Width="560" MinWidth="560" MinHeight="300" Icon="/PPS-TOOL-DELUXE;component/Ressource/iconTool.png" ResizeMode="NoResize">
+        Title="OptiPPS" DataContext="{Binding Dashboard, Source={StaticResource Locator}}" Height="350" Width="560" MinWidth="560" MinHeight="300" Icon="/OptiPPS;component/Ressource/iconTool.png" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="LabDetail"  Content="{x:Static p:Resource.dashboard_headline}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,38,0,0" FontStyle="Italic"/>
         <Label x:Name="LabPage" Content="Dashboard" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="3.158,0.577" Margin="0,15,0,0" FontSize="14" FontWeight="Bold"/>
@@ -27,12 +27,12 @@
         <Button x:Name="BtnPurchases" Content="{x:Static p:Resource.dashboard_masterdata_btn_purchaseItems}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="75" Margin="302,0,141.667,20" FontSize="10" BorderBrush="#FFD4CCCC" Click="btn_Kaufteile_Click"/>
         <Button x:Name="BtnGerman" Content="" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="25" Margin="0,0,79.667,10" FontSize="10" BorderBrush="#FFD4CCCC" Click="BtnGerman_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/PPS-TOOL-DELUXE;component/Ressource/buttonGermany.png"/>
+                <ImageBrush ImageSource="/OptiPPS;component/Ressource/buttonGermany.png"/>
             </Button.Background>
         </Button>
         <Button x:Name="BtnEnglish" Content="" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="25" Margin="0,0,49.667,10" FontSize="10" BorderBrush="#FFD4CCCC" Click="BtnEnglish_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/PPS-TOOL-DELUXE;component/Ressource/buttonUk.png"/>
+                <ImageBrush ImageSource="/OptiPPS;component/Ressource/buttonUk.png"/>
             </Button.Background>
         </Button>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="66" Margin="129,0,129.333,-0.333" VerticalAlignment="Bottom" Width="275" Padding="0"/>
@@ -65,7 +65,7 @@
         </DataGrid>
         <Button x:Name="BtnFrench" Content="" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="25" Margin="0,0,19.667,10" FontSize="10" BorderBrush="#FFD4CCCC" RenderTransformOrigin="0.627,0.519" Click="BtnFrench_Click">
             <Button.Background>
-                <ImageBrush ImageSource="/PPS-TOOL-DELUXE;component/Ressource/buttonFrance.png"/>
+                <ImageBrush ImageSource="/OptiPPS;component/Ressource/buttonFrance.png"/>
             </Button.Background>
         </Button>
 

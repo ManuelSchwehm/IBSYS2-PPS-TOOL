@@ -84,7 +84,7 @@ namespace PPS_TOOL_DELUXE.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PPS-TOOL-DELUXE;component/ui/kaufteilverwaltung.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/OptiPPS;component/ui/kaufteilverwaltung.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\Kaufteilverwaltung.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -92,7 +92,7 @@ namespace PPS_TOOL_DELUXE.Masterdata.Workplaces.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PPS-TOOL-DELUXE;component/ui/arbeitsplatz%20hinzuf%c3%bcgen.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/OptiPPS;component/ui/arbeitsplatz%20hinzuf%c3%bcgen.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\Arbeitsplatz hinzufügen.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

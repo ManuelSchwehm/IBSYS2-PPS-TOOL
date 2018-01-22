@@ -116,7 +116,7 @@ namespace PPS_TOOL_DELUXE.UI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PPS-TOOL-DELUXE;component/ui/schritt4.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/OptiPPS;component/ui/schritt4.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\Schritt4.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

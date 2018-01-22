@@ -92,7 +92,7 @@ namespace PPS_TOOL_DELUXE.Utility {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PPS-TOOL-DELUXE;component/utility/speichern.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/OptiPPS;component/utility/speichern.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Utility\Speichern.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

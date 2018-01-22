@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPS-TOOL-DELUXE", "PPS-TOOL-DELUXE.csproj", "{31C669D1-6124-47C6-A641-7907F515E758}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptiPPS", "OptiPPS.csproj", "{31C669D1-6124-47C6-A641-7907F515E758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
